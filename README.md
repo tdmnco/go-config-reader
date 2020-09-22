@@ -1,7 +1,7 @@
 # Config Reader
 
 - [About](#about)
-- [Getting help](#getting-help)
+- [Getting Help](#getting-help)
 
 ## About
 
@@ -9,7 +9,7 @@ Config Reader is a simple tool for Go that is able to read and parse config file
 
 [↑ Back to top](#config-reader)
 
-## Getting help
+## Getting Help
 
 We believe in an open and welcoming community for all. Please post your questions in the [Issues](https://github.com/tdmnco/go-config-reader/issues) section here at GitHub or contact Kasper Tidemann directly at [kt@tdmn.co](kt@tdmn.co).
 
