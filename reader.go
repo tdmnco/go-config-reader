@@ -2,22 +2,27 @@ package reader
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"os"
 )
 
-// ReadJSON reads a configuration file in JSON
+// ReadJSON reads a configuration file in JSON.
 func ReadJSON(config interface{}, filename string) error {
-	f, err := ioutil.ReadFile(filename)
+
+	// Read the JSON file:
+	f, err := os.ReadFile(filename)
 
 	if err != nil {
 		return err
 	}
 
+	// Unmarshal JSON data:
 	err = json.Unmarshal([]byte(f), &config)
 
 	if err != nil {
 		return err
 	}
 
+	// Return nil on success:
 	return nil
+
 }

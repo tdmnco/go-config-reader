@@ -4,25 +4,30 @@ import (
 	"testing"
 )
 
-type person struct {
-	Firstname string `json:"firstname,omitempty"`
-	Lastname  string `json:"lastname,omitempty"`
+type TestPerson struct {
+	FirstName string `json:"first_name,omitempty"`
+	LastName  string `json:"last_name,omitempty"`
 }
 
 func TestReadJSON(t *testing.T) {
-	p := person{}
 
-	err := ReadJSON(&p, "config.json")
+	// Prepare a test person:
+	p := TestPerson{}
+
+	// Read JSON file:
+	err := ReadJSON(&p, "reader_test.json")
 
 	if err != nil {
 		t.Errorf(err.Error())
 	}
 
-	if p.Firstname != "Kasper" {
-		t.Errorf("Unexpected value of Firstname property")
+	// Validate first name:
+	if p.FirstName != "Kasper" {
+		t.Errorf("Unexpected value of FirstName property")
 	}
 
-	if p.Lastname != "Tidemann" {
-		t.Errorf("Unexpected value of Lastname property")
+	// Validate last name:
+	if p.LastName != "Tidemann" {
+		t.Errorf("Unexpected value of LastName property")
 	}
 }
